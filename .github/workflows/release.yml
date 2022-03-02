@@ -8,15 +8,19 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
       packages: write
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-          cache: 'yarn'
           node-version: 16
           registry-url: https://npm.pkg.github.com/
+      - name: Cache yarn 3
+        uses: actions/cache@v2
+        with:
+          path: .yarn/cache
+          key: ${{ hashFiles('yarn.lock') }}
       - name: Install Dependencies
         shell: bash
         run: yarn install
