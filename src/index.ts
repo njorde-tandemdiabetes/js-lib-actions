@@ -3,5 +3,5 @@ export const sayMyName = (name: string): string => {
 };
 
 export const greetMe = (name: string): string => {
-  return `Hello ${name}.`;
+  return `Hello ${name}`;
 };
