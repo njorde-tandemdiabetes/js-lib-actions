@@ -1,0 +1,36 @@
+{
+  "name": "@njorde-tandemdiabetes/talker",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "repository": "git@github.com:njorde-tandemdiabetes/js-lib-actions.git",
+  "author": "Nater Jorde <njorde@tandemdiabetes.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "lint": "eslint --ext .ts src/**/*",
+    "test": "jest",
+    "test:ci": "jest --ci --reporters=default --reporters=jest-junit --noStackTrace --silent"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^8.3.1",
+    "@types/jest": "^27.4.1",
+    "@typescript-eslint/eslint-plugin": "^5.13.0",
+    "@typescript-eslint/parser": "^5.13.0",
+    "eslint": "^8.10.0",
+    "jest": "^27.5.1",
+    "jest-junit": "^13.0.0",
+    "rollup": "^2.69.0",
+    "ts-jest": "^27.1.3",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.5"
+  },
+  "jest-junit": {
+    "suiteName": "jest tests",
+    "outputDirectory": "test-results",
+    "suiteNameTemplate": "{filepath}",
+    "classNameTemplate": "{classname}",
+    "outputName": "junit.xml"
+  },
+  "packageManager": "yarn@3.2.0"
+}
