@@ -27,6 +27,9 @@ jobs:
       - name: Build Library
         shell: bash
         run: yarn build
+      - name: Quick version
+        shell: bash
+        run: npm version --git-tag-version false ${{github.ref_name}}
       - name: Publish package
         shell: bash
         run: npm publish
